@@ -127,7 +127,16 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="a1" destination="GJE-pZ-sVX" id="ujb-i0-hwO"/>
+                        <outlet property="a2" destination="Q8k-er-ZwR" id="AkE-L3-YI9"/>
+                        <outlet property="a3" destination="4X6-y6-X0z" id="XZZ-1h-o1i"/>
+                        <outlet property="b1" destination="GVa-tt-x5Y" id="hfO-aU-GGi"/>
+                        <outlet property="b2" destination="mpF-NO-e47" id="Hcf-yl-imX"/>
+                        <outlet property="b3" destination="NSX-nA-Kza" id="7K0-R1-Bpf"/>
                         <outlet property="beginPlayingLabel" destination="CRk-Ps-PaT" id="4Y5-nt-hi1"/>
+                        <outlet property="c1" destination="EBp-4O-zOE" id="UU2-7o-bSF"/>
+                        <outlet property="c2" destination="isn-Lp-LCB" id="QGL-ww-f90"/>
+                        <outlet property="c3" destination="uag-Ru-Iyp" id="2cd-Me-pFn"/>
                         <outlet property="secondBeginPlayingLabel" destination="mlH-aC-dJq" id="Xyk-Ae-sgh"/>
                     </connections>
                 </viewController>
