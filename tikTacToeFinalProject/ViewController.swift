@@ -59,7 +59,7 @@ class ViewController: UIViewController
     {
         
     }
-    func XorO {
+    func XorO() {
         
     }
 
