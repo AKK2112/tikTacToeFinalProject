@@ -36,19 +36,18 @@ class ViewController: UIViewController
         case X
         case O
     }
+    func XorO(_ sender: UIButton)
+    {
+        if(sender.title(for: .normal) == nil)
+        {
+            if (currentTurn == Turn.O){
+            sender.setTitle(Naught, for: .normal)
+            currentTurn = Turn.X
+            }
+            
+        }
     
- 
-
-
     
-        
- 
-        
-    
-    func XorO(_ sender: UIButton) {
-        sender.setTitle(Naught, for: .normal)
-
     }
-
 }
 
