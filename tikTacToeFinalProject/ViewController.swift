@@ -7,10 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController
+{
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.yellow
         navigationItem.title = "Tik Tac Toe!"
         
     }
