@@ -13,7 +13,16 @@ class ViewController: UIViewController
     var Naught = "O"
     var Cross = "X"
     
-    
+    @IBOutlet weak var a1: UIButton!
+    @IBOutlet weak var a2: UIButton!
+    @IBOutlet weak var a3: UIButton!
+    @IBOutlet weak var b1: UIButton!
+    @IBOutlet weak var b2: UIButton!
+    @IBOutlet weak var b3: UIButton!
+    @IBOutlet weak var c1: UIButton!
+    @IBOutlet weak var c2: UIButton!
+    @IBOutlet weak var c3: UIButton!
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -28,43 +37,14 @@ class ViewController: UIViewController
         case O
     }
     
+ 
+
+
     
-    @IBAction func button1 (_ sender: UIButton)
-    {
         
-    }
-    @IBAction func button2 (_ sender: UIButton)
-    {
+ 
         
-    }
-    @IBAction func button3 (_ sender: UIButton)
-    {
-        
-    }
-    @IBAction func button4 (_ sender: UIButton)
-    {
-        
-    }
-    @IBAction func button5 (_ sender: UIButton)
-    {
-        
-    }
-    @IBAction func button6 (_ sender: UIButton)
-    {
-        
-    }
-    @IBAction func button7 (_ sender: UIButton)
-    {
-        
-    }
-    @IBAction func button8 (_ sender: UIButton)
-    {
-        
-    }
-    @IBAction func button9 (_ sender: UIButton)
-    {
-        
-    }
+    
     func XorO(_ sender: UIButton) {
         sender.setTitle(Naught, for: .normal)
 
