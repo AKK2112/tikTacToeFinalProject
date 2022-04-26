@@ -21,7 +21,11 @@ class ViewController: UIViewController
         beginPlayingLabel.text = "Player 1 tap on a space to begin playing"
     }
     
+    enum player {
+        case X
+        case O
     
+    }
     
     
     @IBAction func button1 (_ sender: UIButton) {
@@ -51,7 +55,9 @@ class ViewController: UIViewController
     @IBAction func button9 (_ sender: UIButton) {
         
     }
-
+    func XorO {
+        
+    }
 
 }
 
