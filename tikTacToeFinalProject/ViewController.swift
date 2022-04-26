@@ -5,6 +5,7 @@ class ViewController: UIViewController
 
     @IBOutlet weak var beginPlayingLabel: UILabel!
     
+    @IBOutlet weak var secondBeginPlayingLabel: UILabel!
     
     override func viewDidLoad()
     {
@@ -12,9 +13,14 @@ class ViewController: UIViewController
         self.view.backgroundColor = UIColor.yellow
         navigationItem.title = "Tik Tac Toe!"
         beginPlayingLabel.text = "Player 1 tap on a space to begin playing"
+        secondBeginPlayingLabel.text = "Player 2's turn will begin immediatley after Player 1 selects a space and vice versa. Player 1 is X and Player 2 is O"
     }
     
+    enum player {
+        case X
+        case O
     
+    }
     
     
     @IBAction func button1 (_ sender: UIButton)
@@ -53,7 +59,9 @@ class ViewController: UIViewController
     {
         
     }
-
+    func XorO {
+        
+    }
 
 }
 
