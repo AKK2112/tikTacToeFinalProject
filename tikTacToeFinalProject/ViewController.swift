@@ -13,7 +13,7 @@ class ViewController: UIViewController
         self.view.backgroundColor = UIColor.yellow
         navigationItem.title = "Tik Tac Toe!"
         beginPlayingLabel.text = "Player 1 tap on a space to begin playing"
-        
+        secondBeginPlayingLabel.text = "Player 2's turn will begin immediatley after Player 1 selects a space and vice versa. Player 1 is X and Player 2 is O"
     }
     
     enum player {
