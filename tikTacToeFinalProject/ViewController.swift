@@ -7,6 +7,13 @@ class ViewController: UIViewController
     
     @IBOutlet weak var secondBeginPlayingLabel: UILabel!
     
+    var firstTurn = Turn.X
+    var currentTurn = Turn.X
+    
+    var Naught = "O"
+    var Cross = "X"
+    
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -16,10 +23,9 @@ class ViewController: UIViewController
         
     }
     
-    enum player {
+    enum Turn {
         case X
         case O
-    
     }
     
     
@@ -59,8 +65,9 @@ class ViewController: UIViewController
     {
         
     }
-    func XorO {
-        
+    func XorO(_ sender: UIButton) {
+        sender.setTitle(Naught, for: .normal)
+
     }
 
 }
