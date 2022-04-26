@@ -12,6 +12,7 @@ class ViewController: UIViewController
 
     @IBOutlet weak var beginPlayingLabel: UILabel!
     
+    @IBOutlet weak var secondBeginPlayingLabel: UILabel!
     
     override func viewDidLoad()
     {
@@ -19,6 +20,7 @@ class ViewController: UIViewController
         self.view.backgroundColor = UIColor.yellow
         navigationItem.title = "Tik Tac Toe!"
         beginPlayingLabel.text = "Player 1 tap on a space to begin playing"
+        
     }
     
     
