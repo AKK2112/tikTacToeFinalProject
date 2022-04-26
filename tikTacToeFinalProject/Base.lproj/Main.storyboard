@@ -18,11 +18,33 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="J2m-tg-QJd"/>
+                    <navigationItem key="navigationItem" id="J2m-tg-QJd">
+                        <barButtonItem key="rightBarButtonItem" title="Rules" id="3QK-cY-uCk">
+                            <connections>
+                                <segue destination="kzw-Zn-q7h" kind="show" id="4vm-Wp-Qcu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="67.633928571428569"/>
+        </scene>
+        <!--View Controller2-->
+        <scene sceneID="nnF-F4-9EC">
+            <objects>
+                <viewController id="kzw-Zn-q7h" customClass="ViewController2" customModule="tikTacToeFinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OYw-Z7-xoP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ngu-hj-Nl2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EgG-Dt-tPx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ggj-1F-glx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1625" y="79"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Aob-gN-nVt">
