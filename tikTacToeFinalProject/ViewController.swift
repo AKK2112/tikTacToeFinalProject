@@ -7,6 +7,9 @@ class ViewController: UIViewController
     
     @IBOutlet weak var secondBeginPlayingLabel: UILabel!
     
+    @IBOutlet weak var turnLabel: UILabel!
+    
+    
     var firstTurn = Turn.X
     var currentTurn = Turn.X
     
@@ -32,7 +35,8 @@ class ViewController: UIViewController
         secondBeginPlayingLabel.text = "Player 2's turn will begin immediatley after Player 1 selects a space and vice versa. Player 1 is X and Player 2 is O"
     }
     
-    enum Turn {
+    enum Turn
+    {
         case X
         case O
     }
@@ -50,11 +54,12 @@ class ViewController: UIViewController
           
                 sender.setTitle(Naught, for: .normal)
             currentTurn = Turn.X
+                turnLabel.text = "Player One's Turn!"
                 
             } else if (currentTurn == Turn.X){
                 sender.setTitle(Cross, for: .normal)
                 currentTurn = Turn.O
-
+                turnLabel.text = "Player Two's Turn"
             }
             
         }
