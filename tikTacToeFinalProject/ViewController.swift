@@ -100,9 +100,8 @@ class ViewController: UIViewController
         return true
     }
     
-    
 //    func win() {
-//        if (a1.titleLabel?.text == "X" && a2.titleLabel == "X" && a3.titleLabel == "X") {
+//        if (a1.titleLabel?.text == "X" && a2.titleLabel?.text == "X" && a3.titleLabel?.text == "X") {
 //        let alert = UIAlertController(title: "hi", message: nil, preferredStyle: .alert)
 //        let dismiss = UIAlertAction(title: "Dismiss", style: .default) { (action) in
 //            print("User tapped on dismiss")
