@@ -61,7 +61,7 @@ class ViewController: UIViewController
         
         if(fullBoard()) {
             print("draw")
-            ResetBoard()
+//            ResetBoard()
         }
         
         win()
@@ -103,6 +103,7 @@ class ViewController: UIViewController
                 return false
             }
         }
+        ResetBoard()
         return true
     }
     
