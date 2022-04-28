@@ -37,18 +37,27 @@ class ViewController: UIViewController
         case O
     }
     
- 
-
-
-    
-        
- 
-        
-    
-    func XorO(_ sender: UIButton) {
-        sender.setTitle(Naught, for: .normal)
-
+    @IBAction func boardTap(_ sender: UIButton)
+    {
+        XorO(sender)
     }
+    func XorO(_ sender: UIButton)
+    {
+        print("yeet")
+        if(sender.title(for: .normal) == nil)
+        {
+            if (currentTurn == Turn.O){
+          
+                sender.setTitle(Naught, for: .normal)
+            currentTurn = Turn.X
+                
+            } else if (currentTurn == Turn.X){
+                sender.setTitle(Cross, for: .normal)
+                currentTurn = Turn.O
 
+            }
+            
+        }
+    }
 }
 
