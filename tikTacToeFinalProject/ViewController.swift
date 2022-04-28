@@ -2,7 +2,7 @@ import UIKit
 
 class ViewController: UIViewController
 {
-
+    
     
     @IBOutlet weak var beginPlayingLabel: UILabel!
     
@@ -26,7 +26,7 @@ class ViewController: UIViewController
     @IBOutlet weak var c1: UIButton!
     @IBOutlet weak var c2: UIButton!
     @IBOutlet weak var c3: UIButton!
-
+    
     override func viewDidLoad()
     {
         initBoard()
@@ -49,7 +49,7 @@ class ViewController: UIViewController
         gameBoard.append(c2)
         gameBoard.append(c3)
     }
-   
+    
     enum Turn {
         case X
         case O
@@ -63,6 +63,8 @@ class ViewController: UIViewController
             print("draw")
         }
         
+        win()
+        
         
     }
     func XorO(_ sender: UIButton)
@@ -72,7 +74,7 @@ class ViewController: UIViewController
         if(sender.title(for: .normal) == nil)
         {
             if (currentTurn == Turn.O){
-          
+                
                 sender.setTitle(Naught, for: .normal)
                 sender.setTitleColor(.systemBlue, for: .normal)
                 currentTurn = Turn.X
@@ -104,15 +106,34 @@ class ViewController: UIViewController
     }
     
     
-//    func win() {
-//        if (a1.titleLabel?.text == "X" && a2.titleLabel == "X" && a3.titleLabel == "X") {
-//        let alert = UIAlertController(title: "hi", message: nil, preferredStyle: .alert)
-//        let dismiss = UIAlertAction(title: "Dismiss", style: .default) { (action) in
-//            print("User tapped on dismiss")
-//        }
-//        alert.addAction(dismiss)
-//        present(alert, animated: true, completion: nil)
-//        }
-//    }
+    func win() {
+        if (a1.titleLabel?.text == Cross && a2.titleLabel?.text == Cross && a3.titleLabel?.text == Cross) {
+            print("win func work")
+            let alert = UIAlertController(title: "hi", message: nil, preferredStyle: .alert)
+            let dismiss = UIAlertAction(title: "Dismiss", style: .default) { (action) in
+                print("User tapped on dismiss")
+                self.ResetBoard()
+            }
+            alert.addAction(dismiss)
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
+    func ResetBoard() {
+        for button in gameBoard
+        {
+            button.setTitle(nil, for: .normal)
+            button.isEnabled = true
+        }
+        if firstTurn == Turn.X {
+            firstTurn = Turn.O
+            turnLabel.text = "Player Two's Turn!"
+        } else if firstTurn == Turn.O {
+            firstTurn = Turn.X
+            turnLabel.text = "Player One's Turn!"
+        }
+        currentTurn = firstTurn
+    }
 }
 
