@@ -47,7 +47,6 @@ class ViewController: UIViewController
         gameBoard.append(c1)
         gameBoard.append(c2)
         gameBoard.append(c3)
-        print(gameBoard)
     }
    
     enum Turn {
@@ -58,6 +57,12 @@ class ViewController: UIViewController
     @IBAction func boardTap(_ sender: UIButton)
     {
         XorO(sender)
+        
+        if(fullBoard()) {
+            print("draw")
+        }
+        
+        
     }
     func XorO(_ sender: UIButton)
     {
@@ -66,7 +71,7 @@ class ViewController: UIViewController
             if (currentTurn == Turn.O){
           
                 sender.setTitle(Naught, for: .normal)
-            currentTurn = Turn.X
+                currentTurn = Turn.X
                 turnLabel.text = "Player One's Turn!"
                 
             } else if (currentTurn == Turn.X){
@@ -77,5 +82,16 @@ class ViewController: UIViewController
             
         }
     }
+    func fullBoard() -> Bool {
+        for button in gameBoard {
+            if button.title(for: .normal) == nil
+            {
+                return false
+            }
+        }
+        return true
+    }
+    
+    
 }
 
