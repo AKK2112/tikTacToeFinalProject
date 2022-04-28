@@ -78,6 +78,7 @@ class ViewController: UIViewController
                 sender.setTitle(Naught, for: .normal)
                 sender.setTitleColor(.systemBlue, for: .normal)
                 currentTurn = Turn.X
+               
                 
                 turnLabel.text = "Player One's Turn!"
                 turnLabel.textColor = .systemRed
@@ -86,6 +87,8 @@ class ViewController: UIViewController
                 sender.setTitle(Cross, for: .normal)
                 sender.setTitleColor(.systemRed, for: .normal)
                 currentTurn = Turn.O
+                
+                
                 turnLabel.text = "Player Two's Turn!"
                 turnLabel.textColor = .systemBlue
             }
