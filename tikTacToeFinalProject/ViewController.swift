@@ -167,7 +167,7 @@ class ViewController: UIViewController
         for button in gameBoard
         {
             print("reset test")
-            button.titleLabel?.text = nil
+            button.setTitle(nil, for: .normal)
             button.isEnabled = true
         }
         if firstTurn == Turn.X {
