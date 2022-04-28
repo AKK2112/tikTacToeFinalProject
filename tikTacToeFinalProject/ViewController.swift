@@ -12,6 +12,7 @@ class ViewController: UIViewController
     
     var Naught = "O"
     var Cross = "X"
+    var gameBoard = [UIButton]()
     
     @IBOutlet weak var a1: UIButton!
     @IBOutlet weak var a2: UIButton!
@@ -25,6 +26,7 @@ class ViewController: UIViewController
 
     override func viewDidLoad()
     {
+        initBoard()
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.yellow
         navigationItem.title = "Tik Tac Toe!"
@@ -32,6 +34,19 @@ class ViewController: UIViewController
         secondBeginPlayingLabel.text = "Player 2's turn will begin immediatley after Player 1 selects a space and vice versa. Player 1 is X and Player 2 is O"
     }
     
+    func initBoard() {
+        gameBoard.append(a1)
+        gameBoard.append(a2)
+        gameBoard.append(a3)
+        gameBoard.append(b1)
+        gameBoard.append(b2)
+        gameBoard.append(b3)
+        gameBoard.append(c1)
+        gameBoard.append(c2)
+        gameBoard.append(c3)
+        print(gameBoard)
+    }
+   
     enum Turn {
         case X
         case O
@@ -43,7 +58,6 @@ class ViewController: UIViewController
     }
     func XorO(_ sender: UIButton)
     {
-        print("yeet")
         if(sender.title(for: .normal) == nil)
         {
             if (currentTurn == Turn.O){
