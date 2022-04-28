@@ -9,7 +9,6 @@ class ViewController: UIViewController
     
     @IBOutlet weak var turnLabel: UILabel!
     
-    
     var firstTurn = Turn.X
     var currentTurn = Turn.X
     
@@ -30,6 +29,7 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         initBoard()
+        turnLabel.textColor = .systemRed
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.yellow
         navigationItem.title = "Tik Tac Toe!"
@@ -66,13 +66,18 @@ class ViewController: UIViewController
             if (currentTurn == Turn.O){
           
                 sender.setTitle(Naught, for: .normal)
+                sender.setTitleColor(.systemBlue, for: .normal)
             currentTurn = Turn.X
+               
                 turnLabel.text = "Player One's Turn!"
+                turnLabel.textColor = .systemRed
                 
             } else if (currentTurn == Turn.X){
                 sender.setTitle(Cross, for: .normal)
+                sender.setTitleColor(.systemRed, for: .normal)
                 currentTurn = Turn.O
-                turnLabel.text = "Player Two's Turn"
+                turnLabel.text = "Player Two's Turn!"
+                turnLabel.textColor = .systemBlue
             }
             
         }
