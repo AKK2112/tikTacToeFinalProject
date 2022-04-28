@@ -3,6 +3,7 @@ import UIKit
 class ViewController: UIViewController
 {
 
+    
     @IBOutlet weak var beginPlayingLabel: UILabel!
     
     @IBOutlet weak var secondBeginPlayingLabel: UILabel!
@@ -43,6 +44,7 @@ class ViewController: UIViewController
     }
     func XorO(_ sender: UIButton)
     {
+        
         print("yeet")
         if(sender.title(for: .normal) == nil)
         {
@@ -59,5 +61,15 @@ class ViewController: UIViewController
             
         }
     }
+//    func win() {
+//        if (a1.titleLabel?.text == "X" && a2.titleLabel == "X" && a3.titleLabel == "X") {
+//        let alert = UIAlertController(title: "hi", message: nil, preferredStyle: .alert)
+//        let dismiss = UIAlertAction(title: "Dismiss", style: .default) { (action) in
+//            print("User tapped on dismiss")
+//        }
+//        alert.addAction(dismiss)
+//        present(alert, animated: true, completion: nil)
+//        }
+//    }
 }
 
