@@ -8,11 +8,14 @@ class ViewController: UIViewController
     
     @IBOutlet weak var secondBeginPlayingLabel: UILabel!
     
+    @IBOutlet weak var turnLabel: UILabel!
+    
     var firstTurn = Turn.X
     var currentTurn = Turn.X
     
     var Naught = "O"
     var Cross = "X"
+    var gameBoard = [UIButton]()
     
     @IBOutlet weak var a1: UIButton!
     @IBOutlet weak var a2: UIButton!
@@ -26,6 +29,8 @@ class ViewController: UIViewController
 
     override func viewDidLoad()
     {
+        initBoard()
+        turnLabel.textColor = .systemRed
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.yellow
         navigationItem.title = "Tik Tac Toe!"
@@ -33,6 +38,18 @@ class ViewController: UIViewController
         secondBeginPlayingLabel.text = "Player 2's turn will begin immediatley after Player 1 selects a space and vice versa. Player 1 is X and Player 2 is O"
     }
     
+    func initBoard() {
+        gameBoard.append(a1)
+        gameBoard.append(a2)
+        gameBoard.append(a3)
+        gameBoard.append(b1)
+        gameBoard.append(b2)
+        gameBoard.append(b3)
+        gameBoard.append(c1)
+        gameBoard.append(c2)
+        gameBoard.append(c3)
+    }
+   
     enum Turn {
         case X
         case O
@@ -41,6 +58,12 @@ class ViewController: UIViewController
     @IBAction func boardTap(_ sender: UIButton)
     {
         XorO(sender)
+        
+        if(fullBoard()) {
+            print("draw")
+        }
+        
+        
     }
     func XorO(_ sender: UIButton)
     {
@@ -51,16 +74,33 @@ class ViewController: UIViewController
             if (currentTurn == Turn.O){
           
                 sender.setTitle(Naught, for: .normal)
+                sender.setTitleColor(.systemBlue, for: .normal)
             currentTurn = Turn.X
+               
+                turnLabel.text = "Player One's Turn!"
+                turnLabel.textColor = .systemRed
                 
             } else if (currentTurn == Turn.X){
                 sender.setTitle(Cross, for: .normal)
+                sender.setTitleColor(.systemRed, for: .normal)
                 currentTurn = Turn.O
-
+                turnLabel.text = "Player Two's Turn!"
+                turnLabel.textColor = .systemBlue
             }
             
         }
     }
+    func fullBoard() -> Bool {
+        for button in gameBoard {
+            if button.title(for: .normal) == nil
+            {
+                return false
+            }
+        }
+        return true
+    }
+    
+    
 //    func win() {
 //        if (a1.titleLabel?.text == "X" && a2.titleLabel == "X" && a3.titleLabel == "X") {
 //        let alert = UIAlertController(title: "hi", message: nil, preferredStyle: .alert)
