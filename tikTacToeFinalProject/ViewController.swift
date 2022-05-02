@@ -85,12 +85,39 @@ class ViewController: UIViewController
         print("New logic works cross")
             ResetBoard()
             alert(title: "Player One Won")
+            
+            //win sound effect
+            let pathToSound = Bundle.main.path(forResource: "MCXp", ofType: "wav")!
+            let url = URL(fileURLWithPath: pathToSound)
+            do
+            {
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer?.play()
+            }
+            catch
+            {
+                print(error)
+            }
         }
+        
         
         if checkWhoWon(Naught){
         print("New logic works naught")
             ResetBoard()
             alert(title: "Player Two Won")
+
+            //win sound effect
+            let pathToSound = Bundle.main.path(forResource: "MCXp", ofType: "wav")!
+            let url = URL(fileURLWithPath: pathToSound)
+            do
+            {
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer?.play()
+            }
+            catch
+            {
+                print(error)
+            }
         }
         
         
@@ -220,9 +247,9 @@ print("reset game")
     
     
     @IBAction func selectSingleplayerOrMultiplayer(_ sender: UISegmentedControl) {
-        selectSingleplayerOrMultiplayer(self) {
-        case 1: 
-        }
+//        selectSingleplayerOrMultiplayer(self) {
+//        case 1:
+//        }
     
     }
     
