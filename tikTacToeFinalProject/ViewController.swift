@@ -85,12 +85,39 @@ class ViewController: UIViewController
         print("New logic works cross")
             ResetBoard()
             alert(title: "Player One Won")
+            
+            //win sound effect
+            let pathToSound = Bundle.main.path(forResource: "MCXp", ofType: "wav")!
+            let url = URL(fileURLWithPath: pathToSound)
+            do
+            {
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer?.play()
+            }
+            catch
+            {
+                print(error)
+            }
         }
+        
         
         if checkWhoWon(Naught){
         print("New logic works naught")
             ResetBoard()
             alert(title: "Player Two Won")
+
+            //win sound effect
+            let pathToSound = Bundle.main.path(forResource: "MCXp", ofType: "wav")!
+            let url = URL(fileURLWithPath: pathToSound)
+            do
+            {
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer?.play()
+            }
+            catch
+            {
+                print(error)
+            }
         }
         
         
@@ -177,7 +204,7 @@ class ViewController: UIViewController
         if whatCharacter(a3, s) && whatCharacter(b2, s) && whatCharacter(c1, s) {
             return true
         }
-        
+
         return false
     }
    
@@ -214,7 +241,7 @@ class ViewController: UIViewController
     }
     @IBAction func whenResetButtonPressed(_ sender: UIButton) {
         ResetBoard()
-
+print("reset")
 
     }
     

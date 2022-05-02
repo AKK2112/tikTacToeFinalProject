@@ -10,6 +10,8 @@
 		72FD79AF2818622D0074108E /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FD79AE2818622D0074108E /* ViewController2.swift */; };
 		A4EBD4F028204CBF00B00407 /* MCClick.wav in Resources */ = {isa = PBXBuildFile; fileRef = A4EBD4EF28204CBF00B00407 /* MCClick.wav */; };
 		A4EBD4F228204FDB00B00407 /* MCPortal.wav in Resources */ = {isa = PBXBuildFile; fileRef = A4EBD4F128204FDB00B00407 /* MCPortal.wav */; };
+		A4EBD4F62820553700B00407 /* MCXp.wav in Resources */ = {isa = PBXBuildFile; fileRef = A4EBD4F52820553700B00407 /* MCXp.wav */; };
+		A4EBD4F8282055B200B00407 /* MCDeath.wav in Resources */ = {isa = PBXBuildFile; fileRef = A4EBD4F7282055B200B00407 /* MCDeath.wav */; };
 		B454B80E28131F4E00A45E66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B454B80D28131F4E00A45E66 /* AppDelegate.swift */; };
 		B454B81028131F4E00A45E66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B454B80F28131F4E00A45E66 /* SceneDelegate.swift */; };
 		B454B81228131F4E00A45E66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B454B81128131F4E00A45E66 /* ViewController.swift */; };
@@ -23,6 +25,8 @@
 		72FD79AE2818622D0074108E /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		A4EBD4EF28204CBF00B00407 /* MCClick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = MCClick.wav; sourceTree = "<group>"; };
 		A4EBD4F128204FDB00B00407 /* MCPortal.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = MCPortal.wav; sourceTree = "<group>"; };
+		A4EBD4F52820553700B00407 /* MCXp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = MCXp.wav; sourceTree = "<group>"; };
+		A4EBD4F7282055B200B00407 /* MCDeath.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = MCDeath.wav; sourceTree = "<group>"; };
 		B454B80A28131F4E00A45E66 /* tikTacToeFinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tikTacToeFinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B454B80D28131F4E00A45E66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B454B80F28131F4E00A45E66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +54,8 @@
 			children = (
 				A4EBD4F128204FDB00B00407 /* MCPortal.wav */,
 				A4EBD4EF28204CBF00B00407 /* MCClick.wav */,
+				A4EBD4F52820553700B00407 /* MCXp.wav */,
+				A4EBD4F7282055B200B00407 /* MCDeath.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -146,9 +152,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B454B81D28131F5000A45E66 /* LaunchScreen.storyboard in Resources */,
+				A4EBD4F8282055B200B00407 /* MCDeath.wav in Resources */,
 				A4EBD4F028204CBF00B00407 /* MCClick.wav in Resources */,
 				A4EBD4F228204FDB00B00407 /* MCPortal.wav in Resources */,
 				B454B81A28131F5000A45E66 /* Assets.xcassets in Resources */,
+				A4EBD4F62820553700B00407 /* MCXp.wav in Resources */,
 				B454B81528131F4E00A45E66 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
