@@ -86,12 +86,38 @@ class ViewController: UIViewController
         if checkWhoWon(Cross){
         print("New logic works cross")
             ResetBoard()
+            
+            //win sound effect
+            let pathToSound = Bundle.main.path(forResource: "MCXp", ofType: "wav")!
+            let url = URL(fileURLWithPath: pathToSound)
+            do
+            {
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer?.play()
+            }
+            catch
+            {
+                print(error)
+            }
         }
+        
         
         if checkWhoWon(Naught){
         print("New logic works naught")
             ResetBoard()
 
+            //win sound effect
+            let pathToSound = Bundle.main.path(forResource: "MCXp", ofType: "wav")!
+            let url = URL(fileURLWithPath: pathToSound)
+            do
+            {
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer?.play()
+            }
+            catch
+            {
+                print(error)
+            }
         }
         
         
