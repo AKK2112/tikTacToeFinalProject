@@ -206,12 +206,7 @@ class ViewController: UIViewController
     }
     @IBAction func whenResetButtonPressed(_ sender: UIButton) {
         ResetBoard()
-        sender.setTitle(Naught, for: .normal)
-        sender.setTitleColor(.systemBlue, for: .normal)
-        currentTurn = Turn.X
-       
-        turnLabel.text = "Player One's Turn!"
-        turnLabel.textColor = .systemRed
+
 
     }
 }
