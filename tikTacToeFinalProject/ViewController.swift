@@ -204,7 +204,7 @@ class ViewController: UIViewController
         if whatCharacter(a3, s) && whatCharacter(b2, s) && whatCharacter(c1, s) {
             return true
         }
-        
+
         return false
     }
    
@@ -241,7 +241,7 @@ class ViewController: UIViewController
     }
     @IBAction func whenResetButtonPressed(_ sender: UIButton) {
         ResetBoard()
-
+print("reset")
 
     }
     
