@@ -10,7 +10,7 @@ class ViewController: UIViewController
     
     @IBOutlet weak var turnLabel: UILabel!
     
-
+    
     var firstTurn = Turn.X
     var currentTurn = Turn.X
     
@@ -188,7 +188,14 @@ class ViewController: UIViewController
         currentTurn = firstTurn
     }
     @IBAction func whenResetButtonPressed(_ sender: UIButton) {
-        
+        ResetBoard()
+        sender.setTitle(Naught, for: .normal)
+        sender.setTitleColor(.systemBlue, for: .normal)
+        currentTurn = Turn.X
+       
+        turnLabel.text = "Player One's Turn!"
+        turnLabel.textColor = .systemRed
+
     }
 }
 
