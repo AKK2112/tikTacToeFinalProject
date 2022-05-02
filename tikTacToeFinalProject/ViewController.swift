@@ -11,6 +11,7 @@ class ViewController: UIViewController
     
     @IBOutlet weak var turnLabel: UILabel!
     
+    @IBOutlet weak var singleOrMultiplayer: UISegmentedControl!
     
     var firstTurn = Turn.X
     var currentTurn = Turn.X
@@ -41,8 +42,8 @@ class ViewController: UIViewController
         turnLabel.textColor = .systemRed
         self.view.backgroundColor = UIColor.yellow
         navigationItem.title = "Tik Tac Toe!"
-        beginPlayingLabel.text = "Player 1 tap on a space to begin playing"
-        secondBeginPlayingLabel.text = "Player 2's turn will begin immediatley after Player 1 selects a space and vice versa. Player 1 is X and Player 2 is O"
+        beginPlayingLabel.text = "Player 1 (X) tap on a space to begin playing"
+        secondBeginPlayingLabel.text = "Player 2's (O) turn will begin immediatley after Player 1 selects a space."
     }
     
     func initBoard() {
@@ -77,26 +78,25 @@ class ViewController: UIViewController
         {
             print(error)
         }
-        
-        
-        
         XorO(sender)
         
         
         if checkWhoWon(Cross){
         print("New logic works cross")
             ResetBoard()
+            alert(title: "Player One Won")
         }
         
         if checkWhoWon(Naught){
         print("New logic works naught")
             ResetBoard()
-
+            alert(title: "Player Two Won")
         }
         
         
         if(fullBoard()) {
             print("draw")
+            alert(title: "Draw")
 //            ResetBoard()
         }
          
@@ -148,7 +148,7 @@ class ViewController: UIViewController
     
     
     func checkWhoWon(_ s: String) -> Bool {
-       //horisontal
+       //horizontal
         if whatCharacter(a1, s) && whatCharacter(a2, s) && whatCharacter(a3, s) {
             return true
         }
@@ -181,7 +181,15 @@ class ViewController: UIViewController
         return false
     }
    
-
+    func alert(title: String) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let dismiss = UIAlertAction(title: "Reset", style: .default) { (action) in
+            print("User tapped on dismiss")
+            self.ResetBoard()
+        }
+        alert.addAction(dismiss)
+        present(alert, animated: true, completion: nil)
+    }
     
     
     func ResetBoard() {
@@ -209,5 +217,14 @@ class ViewController: UIViewController
 print("reset")
 
     }
+    
+    
+    @IBAction func selectSingleplayerOrMultiplayer(_ sender: UISegmentedControl) {
+        selectSingleplayerOrMultiplayer(self) {
+        case 1: 
+        }
+    
+    }
+    
 }
 
