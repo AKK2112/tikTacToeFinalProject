@@ -220,9 +220,9 @@ class ViewController: UIViewController
     
     
     @IBAction func selectSingleplayerOrMultiplayer(_ sender: UISegmentedControl) {
-        selectSingleplayerOrMultiplayer(self) {
-        case 1: 
-        }
+//        selectSingleplayerOrMultiplayer(self) {
+//        case 1:
+//        }
     
     }
     
