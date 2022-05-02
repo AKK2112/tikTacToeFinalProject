@@ -11,6 +11,7 @@ class ViewController: UIViewController
     
     @IBOutlet weak var turnLabel: UILabel!
     
+    @IBOutlet weak var singleOrMultiplayer: UISegmentedControl!
     
     var firstTurn = Turn.X
     var currentTurn = Turn.X
@@ -41,8 +42,8 @@ class ViewController: UIViewController
         turnLabel.textColor = .systemRed
         self.view.backgroundColor = UIColor.yellow
         navigationItem.title = "Tik Tac Toe!"
-        beginPlayingLabel.text = "Player 1 tap on a space to begin playing"
-        secondBeginPlayingLabel.text = "Player 2's turn will begin immediatley after Player 1 selects a space and vice versa. Player 1 is X and Player 2 is O"
+        beginPlayingLabel.text = "Player 1 (X) tap on a space to begin playing"
+        secondBeginPlayingLabel.text = "Player 2's (O) turn will begin immediatley after Player 1 selects a space."
     }
     
     func initBoard() {
@@ -77,9 +78,6 @@ class ViewController: UIViewController
         {
             print(error)
         }
-        
-        
-        
         XorO(sender)
         
         
@@ -214,5 +212,14 @@ class ViewController: UIViewController
         turnLabel.textColor = .systemRed
 
     }
+    
+    
+    @IBAction func selectSingleplayerOrMultiplayer(_ sender: UISegmentedControl) {
+        selectSingleplayerOrMultiplayer(self) {
+        case 1: 
+        }
+    
+    }
+    
 }
 

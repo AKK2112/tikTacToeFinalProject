@@ -101,14 +101,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlH-aC-dJq">
-                                <rect key="frame" x="3" y="651" width="408" height="108"/>
+                                <rect key="frame" x="0.0" y="641" width="408" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRk-Ps-PaT">
-                                <rect key="frame" x="2" y="595" width="408" height="77"/>
+                                <rect key="frame" x="2" y="595" width="408" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="19"/>
                                 <nil key="textColor"/>
@@ -132,7 +132,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbM-mu-7pK">
-                                <rect key="frame" x="132" y="776" width="149" height="47"/>
+                                <rect key="frame" x="133" y="710" width="149" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Reset Game"/>
@@ -140,6 +140,17 @@
                                     <action selector="whenResetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zBA-JY-RFr"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qCR-T0-WrQ">
+                                <rect key="frame" x="142" y="786" width="131" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="selectSingleplayerOrMultiplayer:" destination="BYZ-38-t0r" eventType="valueChanged" id="hBg-ut-HYb"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -163,6 +174,7 @@
                         <outlet property="c2" destination="isn-Lp-LCB" id="QGL-ww-f90"/>
                         <outlet property="c3" destination="uag-Ru-Iyp" id="2cd-Me-pFn"/>
                         <outlet property="secondBeginPlayingLabel" destination="mlH-aC-dJq" id="Xyk-Ae-sgh"/>
+                        <outlet property="singleOrMultiplayer" destination="qCR-T0-WrQ" id="a8I-80-rni"/>
                         <outlet property="turnLabel" destination="Wh4-uD-h9F" id="hhE-Yg-hk8"/>
                     </connections>
                 </viewController>
