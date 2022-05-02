@@ -1,8 +1,9 @@
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController
 {
-    
+    var audioPlayer: AVAudioPlayer?
     
     @IBOutlet weak var beginPlayingLabel: UILabel!
     
@@ -57,6 +58,21 @@ class ViewController: UIViewController
     
     @IBAction func boardTap(_ sender: UIButton)
     {
+        //click sound effect
+        let pathToSound = Bundle.main.path(forResource: "MCClick", ofType: "wav")!
+        let url = URL(fileURLWithPath: pathToSound)
+        do
+        {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.play()
+        }
+        catch
+        {
+            print(error)
+        }
+        
+        
+        
         XorO(sender)
         
         if(fullBoard()) {
@@ -65,7 +81,6 @@ class ViewController: UIViewController
         }
         
         win()
-        
         
     }
     func XorO(_ sender: UIButton)
