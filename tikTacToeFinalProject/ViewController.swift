@@ -10,9 +10,7 @@ class ViewController: UIViewController
     
     @IBOutlet weak var turnLabel: UILabel!
     
-    @IBOutlet weak var whenResetButtonPressed: UIButton!
-    
-    
+
     var firstTurn = Turn.X
     var currentTurn = Turn.X
     
@@ -188,6 +186,9 @@ class ViewController: UIViewController
             turnLabel.text = "Player One's Turn!"
         }
         currentTurn = firstTurn
+    }
+    @IBAction func whenResetButtonPressed(_ sender: UIButton) {
+        
     }
 }
 
