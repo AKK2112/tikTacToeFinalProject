@@ -72,17 +72,19 @@ class ViewController: UIViewController
         if checkWhoWon(Cross){
         print("New logic works cross")
             ResetBoard()
+            alert(title: "Player One Won")
         }
         
         if checkWhoWon(Naught){
         print("New logic works naught")
             ResetBoard()
-
+            alert(title: "Player Two Won")
         }
         
         
         if(fullBoard()) {
             print("draw")
+            alert(title: "Draw")
 //            ResetBoard()
         }
          
@@ -134,7 +136,7 @@ class ViewController: UIViewController
     
     
     func checkWhoWon(_ s: String) -> Bool {
-       //horisontal
+       //horizontal
         if whatCharacter(a1, s) && whatCharacter(a2, s) && whatCharacter(a3, s) {
             return true
         }
@@ -167,7 +169,15 @@ class ViewController: UIViewController
         return false
     }
    
-
+    func alert(title: String) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let dismiss = UIAlertAction(title: "Reset", style: .default) { (action) in
+            print("User tapped on dismiss")
+            self.ResetBoard()
+        }
+        alert.addAction(dismiss)
+        present(alert, animated: true, completion: nil)
+    }
     
     
     func ResetBoard() {
