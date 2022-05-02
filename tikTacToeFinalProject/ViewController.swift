@@ -170,6 +170,8 @@ class ViewController: UIViewController
             print("reset test")
             button.setTitle(nil, for: .normal)
             button.isEnabled = true
+            var gameBoard = [UIButton]()
+
         }
         if firstTurn == Turn.X {
             firstTurn = Turn.O
