@@ -11,12 +11,20 @@ class ViewController: UIViewController
     
     @IBOutlet weak var turnLabel: UILabel!
     
+    @IBOutlet weak var whenResetButtonPressed: UIButton!
+    
+    
     var firstTurn = Turn.X
     var currentTurn = Turn.X
     
     var Naught = "O"
     var Cross = "X"
+    var Blank = ""
     var gameBoard = [UIButton]()
+    
+    
+    
+    
     
     @IBOutlet weak var a1: UIButton!
     @IBOutlet weak var a2: UIButton!
@@ -30,9 +38,9 @@ class ViewController: UIViewController
     
     override func viewDidLoad()
     {
+        super.viewDidLoad()
         initBoard()
         turnLabel.textColor = .systemRed
-        super.viewDidLoad()
         self.view.backgroundColor = UIColor.yellow
         navigationItem.title = "Tik Tac Toe!"
         beginPlayingLabel.text = "Player 1 tap on a space to begin playing"
@@ -54,6 +62,7 @@ class ViewController: UIViewController
     enum Turn {
         case X
         case O
+        case Nil
     }
     
     @IBAction func boardTap(_ sender: UIButton)
@@ -75,12 +84,24 @@ class ViewController: UIViewController
         
         XorO(sender)
         
+        
+        if checkWhoWon(Cross){
+        print("New logic works cross")
+            ResetBoard()
+        }
+        
+        if checkWhoWon(Naught){
+        print("New logic works naught")
+            ResetBoard()
+
+        }
+        
+        
         if(fullBoard()) {
             print("draw")
 //            ResetBoard()
         }
-        
-        win()
+         
         
     }
     func XorO(_ sender: UIButton)
@@ -123,71 +144,57 @@ class ViewController: UIViewController
     }
     
     
-    func win() {
-        if (a1.titleLabel?.text == Cross && a2.titleLabel?.text == Cross && a3.titleLabel?.text == Cross) {
-            ResetBoard()
-            print("win func work")
-            let alert = UIAlertController(title: "hi", message: nil, preferredStyle: .alert)
-            let dismiss = UIAlertAction(title: "Dismiss", style: .default) { (action) in
-                print("User tapped on dismiss")
-                self.ResetBoard()
-            }
-            alert.addAction(dismiss)
-            present(alert, animated: true, completion: nil)
-        } else if (b1.titleLabel?.text == Cross && b2.titleLabel?.text == Cross && b3.titleLabel?.text == Cross) {
-            ResetBoard()
-            print("win func work")
-            let alert = UIAlertController(title: "hi", message: nil, preferredStyle: .alert)
-            let dismiss = UIAlertAction(title: "Dismiss", style: .default) { (action) in
-                print("User tapped on dismiss")
-                self.ResetBoard()
-            }
-            alert.addAction(dismiss)
-            present(alert, animated: true, completion: nil)
-        } else if (c1.titleLabel?.text == Cross && c2.titleLabel?.text == Cross && c3.titleLabel?.text == Cross) {
-            ResetBoard()
-            print("win func work")
-            let alert = UIAlertController(title: "hi", message: nil, preferredStyle: .alert)
-            let dismiss = UIAlertAction(title: "Dismiss", style: .default) { (action) in
-                print("User tapped on dismiss")
-                self.ResetBoard()
-            }
-            alert.addAction(dismiss)
-            present(alert, animated: true, completion: nil)
-        } else if (a1.titleLabel?.text == Cross && b2.titleLabel?.text == Cross && c3.titleLabel?.text == Cross) {
-            ResetBoard()
-            print("win func work")
-            let alert = UIAlertController(title: "hi", message: nil, preferredStyle: .alert)
-            let dismiss = UIAlertAction(title: "Dismiss", style: .default) { (action) in
-                print("User tapped on dismiss")
-                self.ResetBoard()
-            }
-            alert.addAction(dismiss)
-            present(alert, animated: true, completion: nil)
-        } else if (c1.titleLabel?.text == Cross && b2.titleLabel?.text == Cross && a3.titleLabel?.text == Cross) {
-            ResetBoard()
-            print("win func work")
-            let alert = UIAlertController(title: "hi", message: nil, preferredStyle: .alert)
-            let dismiss = UIAlertAction(title: "Dismiss", style: .default) { (action) in
-                print("User tapped on dismiss")
-                
-                
-            }
-            alert.addAction(dismiss)
-            present(alert, animated: true, completion: nil)
-        }
+    func whatCharacter(_ button: UIButton, _ character: String) -> Bool {
+        return button.title(for: .normal) == character
     }
     
     
+    func checkWhoWon(_ s: String) -> Bool {
+       //horisontal
+        if whatCharacter(a1, s) && whatCharacter(a2, s) && whatCharacter(a3, s) {
+            return true
+        }
+        if whatCharacter(b1, s) && whatCharacter(b2, s) && whatCharacter(b3, s) {
+            return true
+        }
+        if whatCharacter(c1, s) && whatCharacter(c2, s) && whatCharacter(c3, s) {
+            return true
+        }
+        
+        //vertical
+        if whatCharacter(a1, s) && whatCharacter(b1, s) && whatCharacter(c1, s) {
+            return true
+        }
+        if whatCharacter(a2, s) && whatCharacter(b2, s) && whatCharacter(c2, s) {
+            return true
+        }
+        if whatCharacter(a3, s) && whatCharacter(b3, s) && whatCharacter(c3, s) {
+            return true
+        }
+        
+        //diag
+        if whatCharacter(a1, s) && whatCharacter(b2, s) && whatCharacter(c3, s) {
+            return true
+        }
+        if whatCharacter(a3, s) && whatCharacter(b2, s) && whatCharacter(c1, s) {
+            return true
+        }
+        
+        return false
+    }
+   
+
+    
+    
     func ResetBoard() {
+
         for button in gameBoard
         {
-            print("reset test")
             button.setTitle(nil, for: .normal)
             button.isEnabled = true
-            var gameBoard = [UIButton]()
 
         }
+        gameBoard.removeAll()
         if firstTurn == Turn.X {
             firstTurn = Turn.O
             turnLabel.text = "Player Two's Turn!"
@@ -196,6 +203,8 @@ class ViewController: UIViewController
             turnLabel.text = "Player One's Turn!"
         }
         currentTurn = firstTurn
+        initBoard()
+        
     }
 }
 
