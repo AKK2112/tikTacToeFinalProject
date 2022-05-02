@@ -1,16 +1,15 @@
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController
 {
-    
+    var audioPlayer: AVAudioPlayer?
     
     @IBOutlet weak var beginPlayingLabel: UILabel!
     
     @IBOutlet weak var secondBeginPlayingLabel: UILabel!
     
     @IBOutlet weak var turnLabel: UILabel!
-    
-    @IBOutlet weak var whenResetButtonPressed: UIButton!
     
     
     var firstTurn = Turn.X
@@ -66,6 +65,21 @@ class ViewController: UIViewController
     
     @IBAction func boardTap(_ sender: UIButton)
     {
+        //click sound effect
+        let pathToSound = Bundle.main.path(forResource: "MCClick", ofType: "wav")!
+        let url = URL(fileURLWithPath: pathToSound)
+        do
+        {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.play()
+        }
+        catch
+        {
+            print(error)
+        }
+        
+        
+        
         XorO(sender)
         
         
@@ -199,6 +213,11 @@ class ViewController: UIViewController
         currentTurn = firstTurn
         initBoard()
         
+    }
+    @IBAction func whenResetButtonPressed(_ sender: UIButton) {
+        ResetBoard()
+
+
     }
 }
 
