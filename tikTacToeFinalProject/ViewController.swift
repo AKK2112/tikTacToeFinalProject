@@ -220,10 +220,15 @@ class ViewController: UIViewController
     
     
     @IBAction func selectSingleplayerOrMultiplayer(_ sender: UISegmentedControl) {
-        selectSingleplayerOrMultiplayer(self) {
-        case 1: 
+       
+        switch singleOrMultiplayer.selectedSegmentIndex
+        {
+        case 0: Blank = ""
+            
+           
+        default:
+            break
         }
-    
     }
     
 }
