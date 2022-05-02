@@ -141,11 +141,11 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qCR-T0-WrQ">
-                                <rect key="frame" x="142" y="786" width="131" height="31"/>
+                                <rect key="frame" x="120" y="786" width="175" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Multiplayer"/>
+                                    <segment title="AI"/>
                                 </segments>
                                 <connections>
                                     <action selector="selectSingleplayerOrMultiplayer:" destination="BYZ-38-t0r" eventType="valueChanged" id="hBg-ut-HYb"/>
