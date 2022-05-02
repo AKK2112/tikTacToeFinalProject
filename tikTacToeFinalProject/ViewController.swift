@@ -10,6 +10,9 @@ class ViewController: UIViewController
     
     @IBOutlet weak var turnLabel: UILabel!
     
+    @IBOutlet weak var whenResetButtonPressed: UIButton!
+    
+    
     var firstTurn = Turn.X
     var currentTurn = Turn.X
     
@@ -17,6 +20,10 @@ class ViewController: UIViewController
     var Cross = "X"
     var Blank = ""
     var gameBoard = [UIButton]()
+    
+    
+    
+    
     
     @IBOutlet weak var a1: UIButton!
     @IBOutlet weak var a2: UIButton!
