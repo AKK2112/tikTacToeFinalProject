@@ -10,12 +10,19 @@ class ViewController: UIViewController
     
     @IBOutlet weak var turnLabel: UILabel!
     
+    @IBOutlet weak var whenResetButtonPressed: UIButton!
+    
+    
     var firstTurn = Turn.X
     var currentTurn = Turn.X
     
     var Naught = "O"
     var Cross = "X"
     var gameBoard = [UIButton]()
+    
+    
+    
+    
     
     @IBOutlet weak var a1: UIButton!
     @IBOutlet weak var a2: UIButton!
@@ -112,7 +119,7 @@ class ViewController: UIViewController
         if (a1.titleLabel?.text == Cross && a2.titleLabel?.text == Cross && a3.titleLabel?.text == Cross) {
             ResetBoard()
             print("win func work")
-            let alert = UIAlertController(title: "hi", message: nil, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Player One Wins!", message: nil, preferredStyle: .alert)
             let dismiss = UIAlertAction(title: "Dismiss", style: .default) { (action) in
                 print("User tapped on dismiss")
                 self.ResetBoard()
@@ -122,7 +129,7 @@ class ViewController: UIViewController
         } else if (b1.titleLabel?.text == Cross && b2.titleLabel?.text == Cross && b3.titleLabel?.text == Cross) {
             ResetBoard()
             print("win func work")
-            let alert = UIAlertController(title: "hi", message: nil, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Player One Wins!", message: nil, preferredStyle: .alert)
             let dismiss = UIAlertAction(title: "Dismiss", style: .default) { (action) in
                 print("User tapped on dismiss")
                 self.ResetBoard()
@@ -132,7 +139,7 @@ class ViewController: UIViewController
         } else if (c1.titleLabel?.text == Cross && c2.titleLabel?.text == Cross && c3.titleLabel?.text == Cross) {
             ResetBoard()
             print("win func work")
-            let alert = UIAlertController(title: "hi", message: nil, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Player One Wins!", message: nil, preferredStyle: .alert)
             let dismiss = UIAlertAction(title: "Dismiss", style: .default) { (action) in
                 print("User tapped on dismiss")
                 self.ResetBoard()
@@ -142,7 +149,7 @@ class ViewController: UIViewController
         } else if (a1.titleLabel?.text == Cross && b2.titleLabel?.text == Cross && c3.titleLabel?.text == Cross) {
             ResetBoard()
             print("win func work")
-            let alert = UIAlertController(title: "hi", message: nil, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Player One Wins!", message: nil, preferredStyle: .alert)
             let dismiss = UIAlertAction(title: "Dismiss", style: .default) { (action) in
                 print("User tapped on dismiss")
                 self.ResetBoard()
@@ -152,7 +159,7 @@ class ViewController: UIViewController
         } else if (c1.titleLabel?.text == Cross && b2.titleLabel?.text == Cross && a3.titleLabel?.text == Cross) {
             ResetBoard()
             print("win func work")
-            let alert = UIAlertController(title: "hi", message: nil, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Player One Wins!", message: nil, preferredStyle: .alert)
             let dismiss = UIAlertAction(title: "Dismiss", style: .default) { (action) in
                 print("User tapped on dismiss")
                 

@@ -131,6 +131,12 @@
                                     <action selector="boardTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4C8-xN-VVO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbM-mu-7pK">
+                                <rect key="frame" x="132" y="776" width="149" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Reset Game"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -155,6 +161,7 @@
                         <outlet property="c3" destination="uag-Ru-Iyp" id="2cd-Me-pFn"/>
                         <outlet property="secondBeginPlayingLabel" destination="mlH-aC-dJq" id="Xyk-Ae-sgh"/>
                         <outlet property="turnLabel" destination="Wh4-uD-h9F" id="hhE-Yg-hk8"/>
+                        <outlet property="whenResetButtonPressed" destination="xbM-mu-7pK" id="hke-8U-cKC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
