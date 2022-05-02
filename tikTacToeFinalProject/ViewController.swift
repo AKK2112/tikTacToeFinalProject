@@ -241,7 +241,7 @@ class ViewController: UIViewController
     }
     @IBAction func whenResetButtonPressed(_ sender: UIButton) {
         ResetBoard()
-print("reset")
+print("reset game")
 
     }
     
