@@ -13,8 +13,15 @@ class ViewController: UIViewController
     
     @IBOutlet weak var singleOrMultiplayer: UISegmentedControl!
     
+    @IBOutlet weak var xWinCounterLabel: UILabel!
+    
+    @IBOutlet weak var oWinCounterLabel: UILabel!
+    
+    
+    
     var firstTurn = Turn.X
     var currentTurn = Turn.X
+    
     
     var Naught = "O"
     var Cross = "X"
@@ -38,7 +45,10 @@ class ViewController: UIViewController
     
     override func viewDidLoad()
     {
+        
+
         super.viewDidLoad()
+        
         initBoard()
         turnLabel.textColor = .systemRed
         self.view.backgroundColor = UIColor.yellow
