@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		72FD79AF2818622D0074108E /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FD79AE2818622D0074108E /* ViewController2.swift */; };
+		A4E8A1E12822F65B00E54A61 /* silence.wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E8A1E02822F65B00E54A61 /* silence.wav */; };
+		A4E8A1E32822F69700E54A61 /* MCtnt.wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E8A1E22822F69700E54A61 /* MCtnt.wav */; };
 		A4EBD4F028204CBF00B00407 /* MCClick.wav in Resources */ = {isa = PBXBuildFile; fileRef = A4EBD4EF28204CBF00B00407 /* MCClick.wav */; };
 		A4EBD4F228204FDB00B00407 /* MCPortal.wav in Resources */ = {isa = PBXBuildFile; fileRef = A4EBD4F128204FDB00B00407 /* MCPortal.wav */; };
 		A4EBD4F62820553700B00407 /* MCXp.wav in Resources */ = {isa = PBXBuildFile; fileRef = A4EBD4F52820553700B00407 /* MCXp.wav */; };
@@ -23,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		72FD79AE2818622D0074108E /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		A4E8A1E02822F65B00E54A61 /* silence.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = silence.wav; sourceTree = "<group>"; };
+		A4E8A1E22822F69700E54A61 /* MCtnt.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = MCtnt.wav; sourceTree = "<group>"; };
 		A4EBD4EF28204CBF00B00407 /* MCClick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = MCClick.wav; sourceTree = "<group>"; };
 		A4EBD4F128204FDB00B00407 /* MCPortal.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = MCPortal.wav; sourceTree = "<group>"; };
 		A4EBD4F52820553700B00407 /* MCXp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = MCXp.wav; sourceTree = "<group>"; };
@@ -52,6 +56,8 @@
 		A4EBD4EE28204C9D00B00407 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				A4E8A1E22822F69700E54A61 /* MCtnt.wav */,
+				A4E8A1E02822F65B00E54A61 /* silence.wav */,
 				A4EBD4F128204FDB00B00407 /* MCPortal.wav */,
 				A4EBD4EF28204CBF00B00407 /* MCClick.wav */,
 				A4EBD4F52820553700B00407 /* MCXp.wav */,
@@ -153,8 +159,10 @@
 			files = (
 				B454B81D28131F5000A45E66 /* LaunchScreen.storyboard in Resources */,
 				A4EBD4F8282055B200B00407 /* MCDeath.wav in Resources */,
+				A4E8A1E12822F65B00E54A61 /* silence.wav in Resources */,
 				A4EBD4F028204CBF00B00407 /* MCClick.wav in Resources */,
 				A4EBD4F228204FDB00B00407 /* MCPortal.wav in Resources */,
+				A4E8A1E32822F69700E54A61 /* MCtnt.wav in Resources */,
 				B454B81A28131F5000A45E66 /* Assets.xcassets in Resources */,
 				A4EBD4F62820553700B00407 /* MCXp.wav in Resources */,
 				B454B81528131F4E00A45E66 /* Main.storyboard in Resources */,

@@ -293,7 +293,7 @@ class ViewController: UIViewController
         xWinCounterLabel.text = "0"
         oWinCounterLabel.text = "0"
         
-        let pathToSound = Bundle.main.path(forResource: "MCClick", ofType: "wav")!
+        let pathToSound = Bundle.main.path(forResource: "MCtnt", ofType: "wav")!
         let url = URL(fileURLWithPath: pathToSound)
         do
         {

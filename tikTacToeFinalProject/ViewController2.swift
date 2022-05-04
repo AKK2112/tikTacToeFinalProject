@@ -31,7 +31,7 @@ class ViewController2: UIViewController
     
     @IBAction func exampleButton(_ sender: UIButton)
     {
-        let pathToSound = Bundle.main.path(forResource: "MCPortal", ofType: "wav")!
+        let pathToSound = Bundle.main.path(forResource: "silence", ofType: "wav")!
         let url = URL(fileURLWithPath: pathToSound)
         do
         {
