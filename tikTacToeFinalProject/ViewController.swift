@@ -125,7 +125,19 @@ class ViewController: UIViewController
         if(fullBoard()) {
             print("draw")
             alert(title: "Draw")
-            ResetBoard()
+//            ResetBoard()
+            
+            let pathToSound = Bundle.main.path(forResource: "MCDeath", ofType: "wav")!
+            let url = URL(fileURLWithPath: pathToSound)
+            do
+            {
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer?.play()
+            }
+            catch
+            {
+                print(error)
+            }
         }
          
         
@@ -256,9 +268,23 @@ class ViewController: UIViewController
         let boardIndex: Int
     }
     @IBAction func whenResetButtonPressed(_ sender: UIButton) {
+        
+        let pathToSound = Bundle.main.path(forResource: "MCClick", ofType: "wav")!
+        let url = URL(fileURLWithPath: pathToSound)
+        do
+        {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.play()
+        }
+        catch
+        {
+            print(error)
+        }
+        
+        
         ResetBoard()
 print("reset game")
-
+        
     }
     
     
