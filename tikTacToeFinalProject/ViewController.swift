@@ -27,8 +27,8 @@ class ViewController: UIViewController
     var Blank = ""
     var gameBoard = [UIButton]()
     
-//    private var moves: [Moves?] = array(repeating: nil, count: 9)
-
+    //    private var moves: [Moves?] = array(repeating: nil, count: 9)
+    
     
     
     
@@ -45,7 +45,7 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         
-
+        
         super.viewDidLoad()
         
         initBoard()
@@ -89,12 +89,12 @@ class ViewController: UIViewController
         {
             print(error)
         }
-       
-            XorO(sender)
-
+        
+        XorO(sender)
+        
         
         if checkWhoWon(Cross){
-        print("New logic works cross")
+            print("New logic works cross")
             ResetBoard()
             alert(title: "Crosses Won")
             
@@ -118,7 +118,7 @@ class ViewController: UIViewController
         
         
         if checkWhoWon(Naught){
-        print("New logic works naught")
+            print("New logic works naught")
             ResetBoard()
             alert(title: "Naughts Won")
 
@@ -144,7 +144,7 @@ class ViewController: UIViewController
         if(fullBoard()) {
             print("draw")
             alert(title: "Draw")
-//            ResetBoard()
+            //            ResetBoard()
             
             let pathToSound = Bundle.main.path(forResource: "MCDeath", ofType: "wav")!
             let url = URL(fileURLWithPath: pathToSound)
@@ -157,8 +157,8 @@ class ViewController: UIViewController
             {
                 print(error)
             }
-        
-        
+            
+            
         }
     }
     func XorO(_ sender: UIButton)
@@ -171,7 +171,7 @@ class ViewController: UIViewController
                 sender.setTitle(Naught, for: .normal)
                 sender.setTitleColor(.systemBlue, for: .normal)
                 currentTurn = Turn.X
-               
+                
                 
                 turnLabel.text = "Current turn: X"
                 turnLabel.textColor = .systemRed
@@ -208,7 +208,7 @@ class ViewController: UIViewController
     
     
     func checkWhoWon(_ s: String) -> Bool {
-       //horizontal
+        //horizontal
         if whatCharacter(a1, s) && whatCharacter(a2, s) && whatCharacter(a3, s) {
             return true
         }
@@ -237,10 +237,10 @@ class ViewController: UIViewController
         if whatCharacter(a3, s) && whatCharacter(b2, s) && whatCharacter(c1, s) {
             return true
         }
-
+        
         return false
     }
-   
+    
     func alert(title: String) {
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
         let dismiss = UIAlertAction(title: "Reset", style: .default) { (action) in
@@ -257,7 +257,7 @@ class ViewController: UIViewController
         {
             button.setTitle(nil, for: .normal)
             button.isEnabled = true
-
+            
         }
         gameBoard.removeAll()
         if firstTurn == Turn.X {
@@ -278,14 +278,14 @@ class ViewController: UIViewController
         var movePosition = Int.random(in: 0..<9)
         
         if gameBoard[movePosition] == nil {
-//            button.setTitle(Cross, for: .normal)
+            //            button.setTitle(Cross, for: .normal)
         }
         
         
     }
     
     struct Moves {
-//        let player: Player
+        //        let player: Player
         let boardIndex: Int
     }
     @IBAction func whenResetButtonPressed(_ sender: UIButton) {
@@ -306,7 +306,7 @@ class ViewController: UIViewController
         
         
         ResetBoard()
-print("reset game")
+        print("reset game")
         
     }
     
