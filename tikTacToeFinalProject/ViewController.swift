@@ -21,7 +21,8 @@ class ViewController: UIViewController
     var Blank = ""
     var gameBoard = [UIButton]()
     
-    
+//    private var moves: [Moves?] = array(repeating: nil, count: 9)
+
     
     
     
@@ -84,7 +85,7 @@ class ViewController: UIViewController
         if checkWhoWon(Cross){
         print("New logic works cross")
             ResetBoard()
-            alert(title: "Player One Won")
+            alert(title: "Crosses Won")
             
             //win sound effect
             let pathToSound = Bundle.main.path(forResource: "MCXp", ofType: "wav")!
@@ -104,7 +105,7 @@ class ViewController: UIViewController
         if checkWhoWon(Naught){
         print("New logic works naught")
             ResetBoard()
-            alert(title: "Player Two Won")
+            alert(title: "Naughts Won")
 
             //win sound effect
             let pathToSound = Bundle.main.path(forResource: "MCXp", ofType: "wav")!
@@ -125,6 +126,18 @@ class ViewController: UIViewController
             print("draw")
             alert(title: "Draw")
 //            ResetBoard()
+            
+            let pathToSound = Bundle.main.path(forResource: "MCDeath", ofType: "wav")!
+            let url = URL(fileURLWithPath: pathToSound)
+            do
+            {
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer?.play()
+            }
+            catch
+            {
+                print(error)
+            }
         }
          
         
@@ -141,7 +154,7 @@ class ViewController: UIViewController
                 currentTurn = Turn.X
                
                 
-                turnLabel.text = "Player One's Turn!"
+                turnLabel.text = "Current turn: X"
                 turnLabel.textColor = .systemRed
                 
             } else if (currentTurn == Turn.X){
@@ -150,7 +163,7 @@ class ViewController: UIViewController
                 currentTurn = Turn.O
                 
                 
-                turnLabel.text = "Player Two's Turn!"
+                turnLabel.text = "Current turn: O"
                 turnLabel.textColor = .systemBlue
             }
             sender.isEnabled = false
@@ -230,19 +243,48 @@ class ViewController: UIViewController
         gameBoard.removeAll()
         if firstTurn == Turn.X {
             firstTurn = Turn.O
-            turnLabel.text = "Player Two's Turn!"
+            turnLabel.text = "Current turn: O"
         } else if firstTurn == Turn.O {
             firstTurn = Turn.X
-            turnLabel.text = "Player One's Turn!"
+            turnLabel.text = "Current turn: X"
         }
         currentTurn = firstTurn
         initBoard()
         
     }
+    
+    func AIGameplay() {
+        var movePosition = Int.random(in: 0..<9)
+        
+        if gameBoard[movePosition] == nil {
+//            button.setTitle(Cross, for: .normal)
+        }
+        
+        
+    }
+    
+    struct Moves {
+//        let player: Player
+        let boardIndex: Int
+    }
     @IBAction func whenResetButtonPressed(_ sender: UIButton) {
+        
+        let pathToSound = Bundle.main.path(forResource: "MCClick", ofType: "wav")!
+        let url = URL(fileURLWithPath: pathToSound)
+        do
+        {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.play()
+        }
+        catch
+        {
+            print(error)
+        }
+        
+        
         ResetBoard()
 print("reset game")
-
+        
     }
     
     
@@ -253,7 +295,7 @@ print("reset game")
         case 0: Blank = ""
             
            
-        default:
+        default: AIGameplay()
             break
         }
     }
