@@ -140,17 +140,6 @@
                                     <action selector="whenResetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zBA-JY-RFr"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qCR-T0-WrQ">
-                                <rect key="frame" x="120" y="786" width="175" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Multiplayer"/>
-                                    <segment title="AI"/>
-                                </segments>
-                                <connections>
-                                    <action selector="selectSingleplayerOrMultiplayer:" destination="BYZ-38-t0r" eventType="valueChanged" id="hBg-ut-HYb"/>
-                                </connections>
-                            </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63B-36-pkb">
                                 <rect key="frame" x="71" y="841" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -209,7 +198,6 @@
                         <outlet property="c2" destination="isn-Lp-LCB" id="QGL-ww-f90"/>
                         <outlet property="c3" destination="uag-Ru-Iyp" id="2cd-Me-pFn"/>
                         <outlet property="secondBeginPlayingLabel" destination="mlH-aC-dJq" id="Xyk-Ae-sgh"/>
-                        <outlet property="singleOrMultiplayer" destination="qCR-T0-WrQ" id="a8I-80-rni"/>
                         <outlet property="turnLabel" destination="Wh4-uD-h9F" id="hhE-Yg-hk8"/>
                     </connections>
                 </viewController>

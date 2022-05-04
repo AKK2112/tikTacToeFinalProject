@@ -11,7 +11,6 @@ class ViewController: UIViewController
     
     @IBOutlet weak var turnLabel: UILabel!
     
-    @IBOutlet weak var singleOrMultiplayer: UISegmentedControl!
     
     var firstTurn = Turn.X
     var currentTurn = Turn.X
@@ -62,7 +61,6 @@ class ViewController: UIViewController
     enum Turn {
         case X
         case O
-        case Nil
     }
     
     @IBAction func boardTap(_ sender: UIButton)
@@ -79,8 +77,9 @@ class ViewController: UIViewController
         {
             print(error)
         }
-        XorO(sender)
-        
+       
+            XorO(sender)
+
         
         if checkWhoWon(Cross){
         print("New logic works cross")
@@ -138,13 +137,13 @@ class ViewController: UIViewController
             {
                 print(error)
             }
-        }
-         
         
+        
+        }
     }
     func XorO(_ sender: UIButton)
     {
-        
+        sender.isEnabled = false
         if(sender.title(for: .normal) == nil)
         {
             if (currentTurn == Turn.O){
@@ -166,6 +165,7 @@ class ViewController: UIViewController
                 turnLabel.text = "Current turn: O"
                 turnLabel.textColor = .systemBlue
             }
+            
             sender.isEnabled = false
             
         }
@@ -233,7 +233,6 @@ class ViewController: UIViewController
     
     
     func ResetBoard() {
-
         for button in gameBoard
         {
             button.setTitle(nil, for: .normal)
@@ -287,19 +286,6 @@ class ViewController: UIViewController
         ResetBoard()
 print("reset game")
         
-    }
-    
-    
-    @IBAction func selectSingleplayerOrMultiplayer(_ sender: UISegmentedControl) {
-       
-        switch singleOrMultiplayer.selectedSegmentIndex
-        {
-        case 0: Blank = ""
-            
-           
-        default: AIGameplay()
-            break
-        }
     }
     
 }
