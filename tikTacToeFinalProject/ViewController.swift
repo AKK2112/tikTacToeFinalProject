@@ -21,7 +21,8 @@ class ViewController: UIViewController
     var Blank = ""
     var gameBoard = [UIButton]()
     
-    
+//    private var moves: [Moves?] = array(repeating: nil, count: 9)
+
     
     
     
@@ -251,6 +252,21 @@ class ViewController: UIViewController
         initBoard()
         
     }
+    
+    func AIGameplay() {
+        var movePosition = Int.random(in: 0..<9)
+        
+        if gameBoard[movePosition] == nil {
+//            button.setTitle(Cross, for: .normal)
+        }
+        
+        
+    }
+    
+    struct Moves {
+//        let player: Player
+        let boardIndex: Int
+    }
     @IBAction func whenResetButtonPressed(_ sender: UIButton) {
         
         let pathToSound = Bundle.main.path(forResource: "MCClick", ofType: "wav")!
@@ -279,7 +295,7 @@ print("reset game")
         case 0: Blank = ""
             
            
-        default:
+        default: AIGameplay()
             break
         }
     }
