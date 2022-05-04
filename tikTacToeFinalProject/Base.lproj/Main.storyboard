@@ -197,8 +197,10 @@
                         <outlet property="c1" destination="EBp-4O-zOE" id="UU2-7o-bSF"/>
                         <outlet property="c2" destination="isn-Lp-LCB" id="QGL-ww-f90"/>
                         <outlet property="c3" destination="uag-Ru-Iyp" id="2cd-Me-pFn"/>
+                        <outlet property="oWinCounterLabel" destination="jRD-v2-mZu" id="JDm-fk-n5c"/>
                         <outlet property="secondBeginPlayingLabel" destination="mlH-aC-dJq" id="Xyk-Ae-sgh"/>
                         <outlet property="turnLabel" destination="Wh4-uD-h9F" id="hhE-Yg-hk8"/>
+                        <outlet property="xWinCounterLabel" destination="wTE-4m-Jdx" id="GWd-84-DRq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
