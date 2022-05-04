@@ -243,7 +243,7 @@ class ViewController: UIViewController
     }
     
     func alert(title: String) {
-        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: title, message: "Created by: Alec K., Caden L., Matthew S., and Nathan K.", preferredStyle: .alert)
         let dismiss = UIAlertAction(title: "Reset", style: .default) { (action) in
             print("User tapped on dismiss")
             self.ResetBoard()
