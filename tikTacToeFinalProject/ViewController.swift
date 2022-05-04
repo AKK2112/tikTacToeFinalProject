@@ -85,7 +85,7 @@ class ViewController: UIViewController
         if checkWhoWon(Cross){
         print("New logic works cross")
             ResetBoard()
-            alert(title: "Player One Won")
+            alert(title: "Crosses Won")
             
             //win sound effect
             let pathToSound = Bundle.main.path(forResource: "MCXp", ofType: "wav")!
@@ -105,7 +105,7 @@ class ViewController: UIViewController
         if checkWhoWon(Naught){
         print("New logic works naught")
             ResetBoard()
-            alert(title: "Player Two Won")
+            alert(title: "Naughts Won")
 
             //win sound effect
             let pathToSound = Bundle.main.path(forResource: "MCXp", ofType: "wav")!
@@ -125,7 +125,7 @@ class ViewController: UIViewController
         if(fullBoard()) {
             print("draw")
             alert(title: "Draw")
-//            ResetBoard()
+            ResetBoard()
         }
          
         
@@ -142,7 +142,7 @@ class ViewController: UIViewController
                 currentTurn = Turn.X
                
                 
-                turnLabel.text = "Player One's Turn!"
+                turnLabel.text = "Current turn: X"
                 turnLabel.textColor = .systemRed
                 
             } else if (currentTurn == Turn.X){
@@ -151,7 +151,7 @@ class ViewController: UIViewController
                 currentTurn = Turn.O
                 
                 
-                turnLabel.text = "Player Two's Turn!"
+                turnLabel.text = "Current turn: O"
                 turnLabel.textColor = .systemBlue
             }
             sender.isEnabled = false
@@ -231,10 +231,10 @@ class ViewController: UIViewController
         gameBoard.removeAll()
         if firstTurn == Turn.X {
             firstTurn = Turn.O
-            turnLabel.text = "Player Two's Turn!"
+            turnLabel.text = "Current turn: O"
         } else if firstTurn == Turn.O {
             firstTurn = Turn.X
-            turnLabel.text = "Player One's Turn!"
+            turnLabel.text = "Current turn: X"
         }
         currentTurn = firstTurn
         initBoard()
