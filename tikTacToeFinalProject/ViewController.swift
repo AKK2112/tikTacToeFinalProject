@@ -54,6 +54,8 @@ class ViewController: UIViewController
         navigationItem.title = "Tik Tac Toe!"
         beginPlayingLabel.text = "Player 1 (X) tap on a space to begin playing"
         secondBeginPlayingLabel.text = "Player 2's (O) turn will begin immediatley after Player 1 selects a space."
+        xWinCounterLabel.text = "0"
+        oWinCounterLabel.text = "0"
     }
     
     func initBoard() {
@@ -96,6 +98,10 @@ class ViewController: UIViewController
             ResetBoard()
             alert(title: "Crosses Won")
             
+            let data = xWinCounterLabel.text!
+            let data2 = Int(data)!
+            let number = data2 + 1
+            xWinCounterLabel.text = "\(number)"
             //win sound effect
             let pathToSound = Bundle.main.path(forResource: "MCXp", ofType: "wav")!
             let url = URL(fileURLWithPath: pathToSound)
@@ -116,6 +122,10 @@ class ViewController: UIViewController
             ResetBoard()
             alert(title: "Naughts Won")
 
+            let data = oWinCounterLabel.text!
+            let data2 = Int(data)!
+            let number = data2 + 1
+            oWinCounterLabel.text = "\(number)"
             //win sound effect
             let pathToSound = Bundle.main.path(forResource: "MCXp", ofType: "wav")!
             let url = URL(fileURLWithPath: pathToSound)
@@ -279,6 +289,8 @@ class ViewController: UIViewController
         let boardIndex: Int
     }
     @IBAction func whenResetButtonPressed(_ sender: UIButton) {
+        xWinCounterLabel.text = "0"
+        oWinCounterLabel.text = "0"
         
         let pathToSound = Bundle.main.path(forResource: "MCClick", ofType: "wav")!
         let url = URL(fileURLWithPath: pathToSound)
