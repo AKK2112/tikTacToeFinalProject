@@ -254,9 +254,11 @@ class ViewController: UIViewController
         if firstTurn == Turn.X {
             firstTurn = Turn.O
             turnLabel.text = "Current turn: O"
+            turnLabel.textColor = .systemBlue
         } else if firstTurn == Turn.O {
             firstTurn = Turn.X
             turnLabel.text = "Current turn: X"
+            turnLabel.textColor = .systemRed
         }
         currentTurn = firstTurn
         initBoard()
