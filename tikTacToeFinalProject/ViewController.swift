@@ -205,8 +205,10 @@ class ViewController: UIViewController
             }
             
             sender.isEnabled = false
+            HapticsManager.shared.vibrate(for: .success)
             
         }
+        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate)) 
     }
     func fullBoard() -> Bool {
         for button in gameBoard {
