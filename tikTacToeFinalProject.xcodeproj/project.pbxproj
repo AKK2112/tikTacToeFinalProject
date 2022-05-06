@@ -21,6 +21,7 @@
 		B454B81828131F4E00A45E66 /* tikTacToeFinalProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B454B81628131F4E00A45E66 /* tikTacToeFinalProject.xcdatamodeld */; };
 		B454B81A28131F5000A45E66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B454B81928131F5000A45E66 /* Assets.xcassets */; };
 		B454B81D28131F5000A45E66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B454B81B28131F5000A45E66 /* LaunchScreen.storyboard */; };
+		B4CB8C3C2825914200E16EC6 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CB8C3B2825914200E16EC6 /* HapticManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		B454B81928131F5000A45E66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B454B81C28131F5000A45E66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B454B81E28131F5000A45E66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4CB8C3B2825914200E16EC6 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,10 +87,11 @@
 		B454B80C28131F4E00A45E66 /* tikTacToeFinalProject */ = {
 			isa = PBXGroup;
 			children = (
+				B4CB8C3B2825914200E16EC6 /* HapticManager.swift */,
+				B454B81328131F4E00A45E66 /* Main.storyboard */,
 				B454B80D28131F4E00A45E66 /* AppDelegate.swift */,
 				B454B80F28131F4E00A45E66 /* SceneDelegate.swift */,
 				B454B81128131F4E00A45E66 /* ViewController.swift */,
-				B454B81328131F4E00A45E66 /* Main.storyboard */,
 				72FD79AE2818622D0074108E /* ViewController2.swift */,
 				A4EBD4EE28204C9D00B00407 /* Sounds */,
 				B454B81928131F5000A45E66 /* Assets.xcassets */,
@@ -180,6 +183,7 @@
 				B454B81228131F4E00A45E66 /* ViewController.swift in Sources */,
 				B454B80E28131F4E00A45E66 /* AppDelegate.swift in Sources */,
 				B454B81028131F4E00A45E66 /* SceneDelegate.swift in Sources */,
+				B4CB8C3C2825914200E16EC6 /* HapticManager.swift in Sources */,
 				B454B81828131F4E00A45E66 /* tikTacToeFinalProject.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
