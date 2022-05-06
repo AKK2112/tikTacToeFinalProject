@@ -78,6 +78,9 @@ class ViewController: UIViewController
     
     @IBAction func boardTap(_ sender: UIButton)
     {
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.prepare()
+        generator.impactOccurred()
         //click sound effect
         let pathToSound = Bundle.main.path(forResource: "MCClick", ofType: "wav")!
         let url = URL(fileURLWithPath: pathToSound)
@@ -95,6 +98,11 @@ class ViewController: UIViewController
         
         
         if checkWhoWon(Cross){
+            let generator = UIImpactFeedbackGenerator(style: .heavy)
+            generator.prepare()
+            generator.impactOccurred()
+           
+            
             print("New logic works cross")
             ResetBoard()
             alert(title: "Crosses Won")
@@ -122,7 +130,13 @@ class ViewController: UIViewController
             print("New logic works naught")
             ResetBoard()
             alert(title: "Naughts Won")
-
+            let generator = UIImpactFeedbackGenerator(style: .heavy)
+            generator.prepare()
+            generator.impactOccurred()
+//            let generator = UINotificationFeedbackGenerator()
+//              generator.notificationOccurred(.warning)
+            
+            
             let data = oWinCounterLabel.text!
             let data2 = Int(data)!
             let number = data2 + 1
@@ -143,6 +157,9 @@ class ViewController: UIViewController
         
         
         if(fullBoard()) {
+          let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.error)
+            
             print("draw")
             alert(title: "Draw")
             //            ResetBoard()
@@ -292,6 +309,8 @@ class ViewController: UIViewController
     @IBAction func whenResetButtonPressed(_ sender: UIButton) {
         xWinCounterLabel.text = "0"
         oWinCounterLabel.text = "0"
+        let generator = UINotificationFeedbackGenerator()
+          generator.notificationOccurred(.success)
         
         let pathToSound = Bundle.main.path(forResource: "MCtnt", ofType: "wav")!
         let url = URL(fileURLWithPath: pathToSound)
