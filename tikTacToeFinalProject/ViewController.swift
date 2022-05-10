@@ -294,15 +294,6 @@ class ViewController: UIViewController
         
     }
     
-    func AIGameplay() {
-        var movePosition = Int.random(in: 0..<9)
-        
-        if gameBoard[movePosition] == nil {
-            //            button.setTitle(Cross, for: .normal)
-        }
-        
-        
-    }
     
     struct Moves {
         //        let player: Player
