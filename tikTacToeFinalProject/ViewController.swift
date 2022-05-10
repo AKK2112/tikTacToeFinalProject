@@ -26,10 +26,7 @@ class ViewController: UIViewController
     var Cross = "X"
     var Blank = ""
     var gameBoard = [UIButton]()
-    
-    
-    //    private var moves: [Moves?] = array(repeating: nil, count: 9)
-    
+    var i: Int = 0
     
     
     
@@ -78,9 +75,7 @@ class ViewController: UIViewController
     
     @IBAction func boardTap(_ sender: UIButton)
     {
-        let generator = UIImpactFeedbackGenerator(style: .light)
-        generator.prepare()
-        generator.impactOccurred()
+        deployHaptics(1)
         //click sound effect
         let pathToSound = Bundle.main.path(forResource: "MCClick", ofType: "wav")!
         let url = URL(fileURLWithPath: pathToSound)
@@ -205,10 +200,10 @@ class ViewController: UIViewController
             }
             
             sender.isEnabled = false
-            HapticsManager.shared.vibrate(for: .success)
-            
+//            HapticsManager.shared.vibrate(for: .success)
+//
         }
-        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate)) 
+//        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     func fullBoard() -> Bool {
         for button in gameBoard {
@@ -293,13 +288,8 @@ class ViewController: UIViewController
         initBoard()
         
     }
-    
-    
-    struct Moves {
-        //        let player: Player
-        let boardIndex: Int
-    }
     @IBAction func whenResetButtonPressed(_ sender: UIButton) {
+        deployHaptics(6)
         xWinCounterLabel.text = "0"
         oWinCounterLabel.text = "0"
         let generator = UINotificationFeedbackGenerator()
@@ -322,6 +312,43 @@ class ViewController: UIViewController
         print("reset game")
         
     }
+    
+    func deployHaptics(_ s: Int) {
+            
+        i = s
+            print("Running \(i)")
+
+            switch i {
+            case 1:
+                let generator = UINotificationFeedbackGenerator()
+                generator.notificationOccurred(.error)
+
+            case 2:
+                let generator = UINotificationFeedbackGenerator()
+                generator.notificationOccurred(.success)
+
+            case 3:
+                let generator = UINotificationFeedbackGenerator()
+                generator.notificationOccurred(.warning)
+
+            case 4:
+                let generator = UIImpactFeedbackGenerator(style: .light)
+                generator.impactOccurred()
+
+            case 5:
+                let generator = UIImpactFeedbackGenerator(style: .medium)
+                generator.impactOccurred()
+
+            case 6:
+                let generator = UIImpactFeedbackGenerator(style: .heavy)
+                generator.impactOccurred()
+
+            default:
+                let generator = UISelectionFeedbackGenerator()
+                generator.selectionChanged()
+                i = 0
+            }
+        }
     
 }
 
