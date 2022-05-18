@@ -52,9 +52,9 @@ class ViewController: UIViewController
         initBoard()
         turnLabel.textColor = .systemRed
         self.view.backgroundColor = UIColor.yellow
-        navigationItem.title = "Tik Tac Toe!"
+        navigationItem.title = "Tic Tac Toe!"
         beginPlayingLabel.text = "Player 1 (X) tap on a space to begin playing"
-        secondBeginPlayingLabel.text = "Player 2's (O) turn will begin immediatley after Player 1 selects a space."
+        secondBeginPlayingLabel.text = "Player 2's (O) turn will begin immediately after Player 1 selects a space."
         xWinCounterLabel.text = "0"
         oWinCounterLabel.text = "0"
     }
