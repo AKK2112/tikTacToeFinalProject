@@ -9,6 +9,8 @@ class ViewController: UIViewController
     
     @IBOutlet weak var secondBeginPlayingLabel: UILabel!
     
+    @IBOutlet weak var thirdBeginPlayingLabel: UILabel!
+    
     @IBOutlet weak var turnLabel: UILabel!
     
     
@@ -51,7 +53,8 @@ class ViewController: UIViewController
         self.view.backgroundColor = UIColor.yellow
         navigationItem.title = "Tic Tac Toe!"
         beginPlayingLabel.text = "Player 1 (X) tap on a space to begin playing"
-        secondBeginPlayingLabel.text = "Player 2's (O) turn will begin immediately after Player 1 selects a space."
+        secondBeginPlayingLabel.text = "Player 2's (O) turn will begin immediately after Player 1 selects a space"
+        thirdBeginPlayingLabel.text = "Press Reset Game to switch who starts first"
         xWinCounterLabel.text = "0"
         oWinCounterLabel.text = "0"
     }
@@ -96,7 +99,8 @@ class ViewController: UIViewController
             let generator = UIImpactFeedbackGenerator(style: .heavy)
             generator.prepare()
             generator.impactOccurred()
-           
+            view.backgroundColor = .green
+            
             
             print("New logic works cross")
             ResetBoard()
@@ -131,7 +135,7 @@ class ViewController: UIViewController
 //            let generator = UINotificationFeedbackGenerator()
 //              generator.notificationOccurred(.warning)
             
-            
+            view.backgroundColor = .green
             let data = oWinCounterLabel.text!
             let data2 = Int(data)!
             let number = data2 + 1
@@ -158,6 +162,7 @@ class ViewController: UIViewController
             print("draw")
             alert(title: "Draw")
             //            ResetBoard()
+            view.backgroundColor = .red
             
             let pathToSound = Bundle.main.path(forResource: "MCDeath", ofType: "wav")!
             let url = URL(fileURLWithPath: pathToSound)
@@ -261,6 +266,7 @@ class ViewController: UIViewController
         let dismiss = UIAlertAction(title: "Reset", style: .default) { (action) in
             print("User tapped on dismiss")
             self.ResetBoard()
+            self.view.backgroundColor = UIColor.yellow
         }
         alert.addAction(dismiss)
         present(alert, animated: true, completion: nil)
@@ -286,6 +292,7 @@ class ViewController: UIViewController
         }
         currentTurn = firstTurn
         initBoard()
+        
         
     }
     @IBAction func whenResetButtonPressed(_ sender: UIButton) {
