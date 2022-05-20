@@ -99,13 +99,13 @@ class ViewController: UIViewController
             let generator = UIImpactFeedbackGenerator(style: .heavy)
             generator.prepare()
             generator.impactOccurred()
-            view.backgroundColor = .green
-            
+            view.backgroundColor = .red
             
             print("New logic works cross")
             ResetBoard()
             alert(title: "Crosses Won")
             
+            turnLabel.text = ""
             let data = xWinCounterLabel.text!
             let data2 = Int(data)!
             let number = data2 + 1
@@ -132,10 +132,11 @@ class ViewController: UIViewController
             let generator = UIImpactFeedbackGenerator(style: .heavy)
             generator.prepare()
             generator.impactOccurred()
+            view.backgroundColor = .blue
 //            let generator = UINotificationFeedbackGenerator()
 //              generator.notificationOccurred(.warning)
             
-            view.backgroundColor = .green
+            turnLabel.text = ""
             let data = oWinCounterLabel.text!
             let data2 = Int(data)!
             let number = data2 + 1
@@ -162,7 +163,8 @@ class ViewController: UIViewController
             print("draw")
             alert(title: "Draw")
             //            ResetBoard()
-            view.backgroundColor = .red
+            view.backgroundColor = .white
+            turnLabel.text = ""
             
             let pathToSound = Bundle.main.path(forResource: "MCDeath", ofType: "wav")!
             let url = URL(fileURLWithPath: pathToSound)
