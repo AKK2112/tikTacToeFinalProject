@@ -54,7 +54,7 @@ class ViewController: UIViewController
         navigationItem.title = "Tic Tac Toe!"
         beginPlayingLabel.text = "Player 1 (X) tap on a space to begin playing"
         secondBeginPlayingLabel.text = "Player 2's (O) turn will begin immediately after Player 1 selects a space"
-        thirdBeginPlayingLabel.text = "Press Reset Game to switch who starts first"
+        thirdBeginPlayingLabel.text = "Press Reset Scores to reset the scores"
         xWinCounterLabel.text = "0"
         oWinCounterLabel.text = "0"
     }
@@ -297,6 +297,11 @@ class ViewController: UIViewController
         
         
     }
+    
+    @IBAction func whenSwitchButtonPressed(_ sender: UIButton) {
+        ResetBoard()
+    }
+    
     @IBAction func whenResetButtonPressed(_ sender: UIButton) {
         deployHaptics(6)
         xWinCounterLabel.text = "0"
@@ -317,7 +322,6 @@ class ViewController: UIViewController
         }
         
         
-        ResetBoard()
         print("reset game")
         
     }
